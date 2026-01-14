@@ -10,7 +10,7 @@ public class ModoPreparo : IModoPreparo
 
         foreach (var passo in receita.Passos)
         {
-            Console.WriteLine($" Passo: {passo.Ordem}, Ordem: {passo.Descricao}");
+            Console.WriteLine($" Ordem: {passo.Ordem}, Passo: {passo.Descricao}");
         }
     }
 }

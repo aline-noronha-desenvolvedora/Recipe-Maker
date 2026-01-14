@@ -27,7 +27,7 @@ public class FabricaShari : IFabricaReceita
             passos
         );
 
-        receita._ModoPreparo = new ModoPreparo();
+        receita.ModoPreparo = new ModoPreparo();
 
         return receita;
     }
