@@ -8,3 +8,4 @@ var controller = new ReceitaController(fabricaReceita);
 var receita = controller.ObterReceita();
 
 Console.WriteLine($"Receita : {receita.Nome}");
+receita.Preparar();

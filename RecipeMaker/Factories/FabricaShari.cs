@@ -1,4 +1,5 @@
 using RecipeMaker.Models;
+using RecipeMaker.Strategies;
 
 namespace RecipeMaker.Factories;
 
@@ -19,11 +20,15 @@ public class FabricaShari : IFabricaReceita
             new Passo(2, "Aqueça levemente até dissolver o açúcar e o sal"),
             new Passo(3, "Deixe esfriar antes de usar no arroz")
         };
-
-        return new Receita(
+        
+        var receita = new Receita(
             "Shari (Tempero para arroz de sushi)",
             ingredientes,
             passos
         );
+
+        receita._ModoPreparo = new ModoPreparo();
+
+        return receita;
     }
 }
