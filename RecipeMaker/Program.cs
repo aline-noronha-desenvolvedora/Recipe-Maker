@@ -1,11 +1,16 @@
+using System;
 using RecipeMaker.Controllers;
 using RecipeMaker.Factories;
 using RecipeMaker.Models;
 
-IFabricaReceita fabricaReceita = new FabricaShari();
-var controller = new ReceitaController(fabricaReceita);
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var controller = new ReceitaController();
+        controller.ExecutarShari();
 
-var receita = controller.ObterReceita();
-
-Console.WriteLine($"Receita : {receita.Nome}");
-receita.Preparar();
+        Console.WriteLine("\nPressione qualquer tecla para sair...");
+        Console.ReadKey();
+    }
+}

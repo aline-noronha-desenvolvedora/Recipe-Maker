@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace RecipeMaker.Models;
 
 public class Receita
@@ -6,7 +9,10 @@ public class Receita
     public List<Ingrediente> Ingredientes { get; }
     public List<Passo> Passos { get; }
     
-    public IModoPreparo ModoPreparo { get; set; }
+    public IModoPreparo ModoPreparo 
+    {
+        get; set;
+    }
 
     public Receita(
         string nome,

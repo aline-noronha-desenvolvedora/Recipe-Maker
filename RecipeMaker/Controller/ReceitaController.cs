@@ -1,3 +1,5 @@
+using System;
+using RecipeMaker.Chain.Passos;
 using RecipeMaker.Models;
 using RecipeMaker.Views;
 
@@ -5,15 +7,18 @@ namespace RecipeMaker.Controllers;
 
 public class ReceitaController
 {
-    private readonly IFabricaReceita _fabrica;
-
-    public ReceitaController(IFabricaReceita fabrica)
+    public void ExecutarShari()
     {
-        _fabrica = fabrica;
-    }
+        Console.WriteLine("Receita: Shari (Tempero para arroz de sushi)");
+        Console.WriteLine("Modo de preparo:\n");
+        
+        var misturar = new MisturarIngredientesPasso();
+        var aquecer = new AquecerMisturaPassso();
+        var finalizar = new FinalizarPasso();
 
-    public Receita ObterReceita()
-    {
-        return _fabrica.Criar();
+        misturar.SetPasso(aquecer)
+            .SetPasso(finalizar);
+        
+        misturar.Executar();
     }
 }
