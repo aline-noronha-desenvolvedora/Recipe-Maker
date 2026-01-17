@@ -6,6 +6,6 @@ public class FinalizarPasso : PassoBase
 {
     public override void ExecutarPasso()
     {
-        Console.WriteLine("Aquecendo a mistura em fogo baixo (não ferver).");
+        Console.WriteLine("Desligue o fogo, deixe esfriar e estará pronto.");
     }
 }

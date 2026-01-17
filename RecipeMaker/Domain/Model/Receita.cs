@@ -7,28 +7,22 @@ public class Receita
 {
     public string Nome { get; }
     public List<Ingrediente> Ingredientes { get; }
-    public List<Passo> Passos { get; }
     
-    public IModoPreparo ModoPreparo 
-    {
-        get; set;
-    }
+    public IModoPreparo ModoPreparo { get; set; }
 
     public Receita(
         string nome,
-        List<Ingrediente> ingredientes,
-        List<Passo> passos)
+        List<Ingrediente> ingredientes)
     {
         Nome = nome;
         Ingredientes = ingredientes;
-        Passos = passos;
     }
 
     public void Preparar()
     {
         if (ModoPreparo == null)
         {
-            throw new InvalidOperationException();
+            throw new InvalidOperationException("Modo de preparo não definido");
         }
         
         ModoPreparo.ExecutarReceita(this);
