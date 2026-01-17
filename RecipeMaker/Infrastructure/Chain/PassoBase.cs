@@ -2,18 +2,18 @@ namespace RecipeMaker.Chain;
 
 public abstract class PassoBase: IPassoHandler
 {
-    public IPassoHandler? _proximo;
+    public IPassoHandler Proximo;
     
     public IPassoHandler SetPasso(IPassoHandler proximo)
     {
-        _proximo = proximo;
-        return _proximo;
+        this.Proximo = proximo;
+        return Proximo;
     }
 
     public void Executar()
     {
         ExecutarPasso();
-        _proximo?.Executar();
+        Proximo?.Executar();
     }
 
     public abstract void ExecutarPasso();

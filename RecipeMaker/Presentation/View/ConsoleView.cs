@@ -39,9 +39,5 @@ public class ConsoleView
 
         Console.WriteLine();
         Console.WriteLine("Modo de preparo:");
-        foreach (var passo in receita.Passos.OrderBy(p => p.Ordem))
-        {
-            Console.WriteLine($"{passo.Ordem}. {passo.Descricao}");
-        }
     }
 }
